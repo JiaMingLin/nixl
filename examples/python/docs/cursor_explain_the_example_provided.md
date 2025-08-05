@@ -53,6 +53,7 @@ serdes = nixl_agent1.get_serialized_descs(agent1_reg_descs)
 
 ### 4. 第一次資料傳輸 (第 102-131 行)
 ```python
+# initialize transfer
 xfer_handle_1 = nixl_agent2.initialize_xfer(
     "READ", agent2_xfer_descs, agent1_xfer_descs, remote_name, b"UUID1"
 )
