@@ -33,7 +33,8 @@ nixl_agent2 = nixl_agent("initiator", agent_config)
 ### 2. 記憶體分配與註冊 (第 49-91 行)
 ```python
 addr1 = nixl_utils.malloc_passthru(buf_size * 2)
-agent1_reg_descs = nixl_agent1.get_reg_descs(agent1_strings, "DRAM", is_sorted=True)
+agent1_reg_descs = nixl_agent1.get_reg_descs(
+                   agent1_strings, "DRAM", is_sorted=True)
 nixl_agent1.register_memory(agent1_reg_descs)
 ```
 - 分配記憶體緩衝區
