@@ -55,8 +55,8 @@ serdes = nixl_agent1.get_serialized_descs(agent1_reg_descs)
 ```python
 # initialize transfer
 xfer_handle_1 = nixl_agent2.initialize_xfer(
-    "READ", agent2_xfer_descs, ...
-)
+    "READ", agent2_xfer_descs, ...)
+state = nixl_agent2.transfer(xfer_handle_1)
 ```
 - 初始化一個 READ 操作（從 target 讀取資料到 initiator）
 - 使用輪詢方式檢查傳輸狀態
