@@ -25,7 +25,7 @@ explain this example
 ```python
 agent_config = nixl_agent_config(backends=["UCX"])
 nixl_agent1 = nixl_agent("target", agent_config)
-nixl_agent2 = nixl_agent("initiator", None)
+nixl_agent2 = nixl_agent("initiator", agent_config)
 ```
 - 創建兩個 agent，使用 UCX 後端進行網路通訊
 - 查詢並顯示可用的 plugin 參數

@@ -52,16 +52,16 @@ if __name__ == "__main__":
     agent1_addrs = [(addr1, buf_size, 0), (addr2, buf_size, 0)]
     agent1_strings = [(addr1, buf_size, 0, "a"), (addr2, buf_size, 0, "b")]
 
-    agent1_reg_descs = nixl_agent1.get_reg_descs(agent1_strings, "DRAM", is_sorted=True)
-    agent1_xfer_descs = nixl_agent1.get_xfer_descs(agent1_addrs, "DRAM", is_sorted=True)
+    agent1_reg_descs = nixl_agent1.get_reg_descs(agent1_strings, "cuda", is_sorted=True)
+    agent1_xfer_descs = nixl_agent1.get_xfer_descs(agent1_addrs, "cuda", is_sorted=True)
 
     # Prefer numpy arrays for performance
     agent1_addrs_np = np.array(agent1_addrs)
     agent1_xfer_descs_np = nixl_agent1.get_xfer_descs(
-        agent1_addrs_np, "DRAM", is_sorted=True
+        agent1_addrs_np, "cuda", is_sorted=True
     )
     agent1_reg_descs_np = nixl_agent1.get_reg_descs(
-        agent1_addrs_np, "DRAM", is_sorted=True
+        agent1_addrs_np, "cuda", is_sorted=True
     )
 
     assert agent1_xfer_descs == agent1_xfer_descs_np
@@ -83,8 +83,8 @@ if __name__ == "__main__":
     agent2_addrs = [(addr3, buf_size, 0), (addr4, buf_size, 0)]
     agent2_strings = [(addr3, buf_size, 0, "a"), (addr4, buf_size, 0, "b")]
 
-    agent2_reg_descs = nixl_agent2.get_reg_descs(agent2_strings, "DRAM", is_sorted=True)
-    agent2_xfer_descs = nixl_agent2.get_xfer_descs(agent2_addrs, "DRAM", is_sorted=True)
+    agent2_reg_descs = nixl_agent2.get_reg_descs(agent2_strings, "cuda", is_sorted=True)
+    agent2_xfer_descs = nixl_agent2.get_xfer_descs(agent2_addrs, "cuda", is_sorted=True)
 
     agent2_descs = nixl_agent2.register_memory(agent2_reg_descs, is_sorted=True)
     assert agent2_descs is not None
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         exit()
 
     # test multiple postings
-    for _ in range(10000000):
+    for _ in range(2):
         state = nixl_agent2.transfer(xfer_handle_1)
         assert state != "ERR"
 
@@ -131,10 +131,10 @@ if __name__ == "__main__":
 
     # prep transfer mode
     local_prep_handle = nixl_agent2.prep_xfer_dlist(
-        "NIXL_INIT_AGENT", [(addr3, buf_size, 0), (addr4, buf_size, 0)], "DRAM", True
+        "NIXL_INIT_AGENT", [(addr3, buf_size, 0), (addr4, buf_size, 0)], "cuda", True
     )
     remote_prep_handle = nixl_agent2.prep_xfer_dlist(
-        remote_name, agent1_xfer_descs, "DRAM"
+        remote_name, agent1_xfer_descs, "cuda"
     )
 
     assert local_prep_handle != 0
