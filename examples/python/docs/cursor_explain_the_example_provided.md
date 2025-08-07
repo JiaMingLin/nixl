@@ -33,7 +33,8 @@ nixl_agent2 = nixl_agent("initiator", agent_config)
 ### 2. 記憶體分配與註冊 (第 49-91 行)
 ```python
 addr1 = nixl_utils.malloc_passthru(buf_size * 2)
-agent1_reg_descs = nixl_agent1.get_reg_descs(agent1_strings, "DRAM", is_sorted=True)
+agent1_reg_descs = nixl_agent1.get_reg_descs(
+                   agent1_strings, "DRAM", is_sorted=True)
 nixl_agent1.register_memory(agent1_reg_descs)
 ```
 - 分配記憶體緩衝區
@@ -52,9 +53,10 @@ serdes = nixl_agent1.get_serialized_descs(agent1_reg_descs)
 
 ### 4. 第一次資料傳輸 (第 102-131 行)
 ```python
+# initialize transfer
 xfer_handle_1 = nixl_agent2.initialize_xfer(
-    "READ", agent2_xfer_descs, agent1_xfer_descs, remote_name, b"UUID1"
-)
+    "READ", agent2_xfer_descs, ...)
+state = nixl_agent2.transfer(xfer_handle_1)
 ```
 - 初始化一個 READ 操作（從 target 讀取資料到 initiator）
 - 使用輪詢方式檢查傳輸狀態
