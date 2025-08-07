@@ -86,6 +86,7 @@ if __name__ == "__main__":
     agent2_reg_descs = nixl_agent2.get_reg_descs(agent2_strings, "cuda", is_sorted=True)
     agent2_xfer_descs = nixl_agent2.get_xfer_descs(agent2_addrs, "cuda", is_sorted=True)
 
+    # register memory
     agent2_descs = nixl_agent2.register_memory(agent2_reg_descs, is_sorted=True)
     assert agent2_descs is not None
 
