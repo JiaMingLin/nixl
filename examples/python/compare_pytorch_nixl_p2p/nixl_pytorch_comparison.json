@@ -1,0 +1,254 @@
+{
+  "comparison_type": "NIXL vs PyTorch",
+  "config": {
+    "iterations": 5,
+    "warmup": 2
+  },
+  "system_info": {
+    "pytorch_version": "2.7.1+cu126",
+    "cuda_version": "12.6",
+    "gpu_count": 2,
+    "nixl_available": true,
+    "nixl_plugin_dir": "/home/jiaming/miniconda3/envs/nixl/lib/python3.12/site-packages/.nixl.mesonpy.libs/plugins/"
+  },
+  "comparisons": [
+    {
+      "tensor_size": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "pytorch": {
+        "framework": "PyTorch",
+        "tensor_size": [
+          512,
+          512
+        ],
+        "dtype": "torch.float32",
+        "data_size_mb": 1.0,
+        "avg_time_ms": 0.869936216622591,
+        "min_time_ms": 0.8686929941177368,
+        "std_time_ms": 0.0013164205095545626,
+        "avg_throughput_mbps": 1149.5095627612377,
+        "max_throughput_mbps": 1151.1546734823405,
+        "verification_passed": true,
+        "all_times_ms": [
+          0.8719540201127529,
+          0.8704169886186719,
+          0.8696930017322302,
+          0.8686929941177368,
+          0.8689240785315633
+        ]
+      },
+      "nixl": {
+        "framework": "NIXL",
+        "tensor_size": [
+          512,
+          512
+        ],
+        "dtype": "torch.float32",
+        "data_size_mb": 1.0,
+        "avg_time_ms": 2.0892604254186153,
+        "min_time_ms": 1.9706980092450976,
+        "std_time_ms": 0.09588013650606084,
+        "avg_throughput_mbps": 478.6382721051325,
+        "max_throughput_mbps": 507.4344193319927,
+        "verification_passed": true,
+        "all_times_ms": [
+          1.9706980092450976,
+          2.085462096147239,
+          2.0825500832870603,
+          2.0691619720309973,
+          2.2384299663826823
+        ]
+      },
+      "performance": {
+        "nixl_speedup_time": 0.4163847675659132,
+        "nixl_speedup_throughput": 0.41638476756591325,
+        "pytorch_faster": true,
+        "nixl_faster": false
+      }
+    },
+    {
+      "tensor_size": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "pytorch": {
+        "framework": "PyTorch",
+        "tensor_size": [
+          1024,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "data_size_mb": 4.0,
+        "avg_time_ms": 3.4865013556554914,
+        "min_time_ms": 3.438756917603314,
+        "std_time_ms": 0.031644032921749714,
+        "avg_throughput_mbps": 1147.2819287769835,
+        "max_throughput_mbps": 1163.211036966187,
+        "verification_passed": true,
+        "all_times_ms": [
+          3.5058099310845137,
+          3.438756917603314,
+          3.499348065815866,
+          3.5173879005014896,
+          3.4712039632722735
+        ]
+      },
+      "nixl": {
+        "framework": "NIXL",
+        "tensor_size": [
+          1024,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "data_size_mb": 4.0,
+        "avg_time_ms": 8.708721399307251,
+        "min_time_ms": 8.654954959638417,
+        "std_time_ms": 0.07135304741239844,
+        "avg_throughput_mbps": 459.30967550738114,
+        "max_throughput_mbps": 462.1630058912647,
+        "verification_passed": true,
+        "all_times_ms": [
+          8.65972600877285,
+          8.765509002842009,
+          8.805165998637676,
+          8.654954959638417,
+          8.658251026645303
+        ]
+      },
+      "performance": {
+        "nixl_speedup_time": 0.4003459515805421,
+        "nixl_speedup_throughput": 0.4003459515805421,
+        "pytorch_faster": true,
+        "nixl_faster": false
+      }
+    },
+    {
+      "tensor_size": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "pytorch": {
+        "framework": "PyTorch",
+        "tensor_size": [
+          2048,
+          2048
+        ],
+        "dtype": "torch.float32",
+        "data_size_mb": 16.0,
+        "avg_time_ms": 13.784773810766637,
+        "min_time_ms": 13.748397934250534,
+        "std_time_ms": 0.02362653611746536,
+        "avg_throughput_mbps": 1160.7009458148057,
+        "max_throughput_mbps": 1163.771959214258,
+        "verification_passed": true,
+        "all_times_ms": [
+          13.748397934250534,
+          13.806418981403112,
+          13.802657020278275,
+          13.775570085272193,
+          13.790825032629073
+        ]
+      },
+      "nixl": {
+        "framework": "NIXL",
+        "tensor_size": [
+          2048,
+          2048
+        ],
+        "dtype": "torch.float32",
+        "data_size_mb": 16.0,
+        "avg_time_ms": 34.95639895554632,
+        "min_time_ms": 34.561035921797156,
+        "std_time_ms": 0.4543438164188216,
+        "avg_throughput_mbps": 457.71305048746666,
+        "max_throughput_mbps": 462.9490862543569,
+        "verification_passed": true,
+        "all_times_ms": [
+          35.732476972043514,
+          34.94078596122563,
+          34.76358391344547,
+          34.561035921797156,
+          34.784112009219825
+        ]
+      },
+      "performance": {
+        "nixl_speedup_time": 0.3943419294503586,
+        "nixl_speedup_throughput": 0.3943419294503587,
+        "pytorch_faster": true,
+        "nixl_faster": false
+      }
+    },
+    {
+      "tensor_size": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.float16",
+      "pytorch": {
+        "framework": "PyTorch",
+        "tensor_size": [
+          1024,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "data_size_mb": 2.0,
+        "avg_time_ms": 1.7385406186804175,
+        "min_time_ms": 1.725784968584776,
+        "std_time_ms": 0.014092889925355064,
+        "avg_throughput_mbps": 1150.390148214101,
+        "max_throughput_mbps": 1158.892930699294,
+        "verification_passed": true,
+        "all_times_ms": [
+          1.7534639919176698,
+          1.7542910063639283,
+          1.7300400650128722,
+          1.7291230615228415,
+          1.725784968584776
+        ]
+      },
+      "nixl": {
+        "framework": "NIXL",
+        "tensor_size": [
+          1024,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "data_size_mb": 2.0,
+        "avg_time_ms": 4.053734405897558,
+        "min_time_ms": 4.012331017293036,
+        "std_time_ms": 0.050982463583722576,
+        "avg_throughput_mbps": 493.37223402951827,
+        "max_throughput_mbps": 498.4633599222136,
+        "verification_passed": true,
+        "all_times_ms": [
+          4.077102988958359,
+          4.026089096441865,
+          4.020320950075984,
+          4.132827976718545,
+          4.012331017293036
+        ]
+      },
+      "performance": {
+        "nixl_speedup_time": 0.4288738344947092,
+        "nixl_speedup_throughput": 0.42887383449470917,
+        "pytorch_faster": true,
+        "nixl_faster": false
+      }
+    },
+    {
+      "tensor_size": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.int32",
+      "pytorch": null,
+      "nixl": null
+    }
+  ],
+  "timestamp": "2025-08-12 07:58:55"
+}

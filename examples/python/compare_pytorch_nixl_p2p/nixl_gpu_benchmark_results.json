@@ -1,0 +1,358 @@
+{
+  "config": {
+    "tensor_shapes": [
+      [
+        32,
+        32
+      ],
+      [
+        512,
+        512
+      ],
+      [
+        2048,
+        2048
+      ],
+      [
+        4096,
+        4096
+      ]
+    ],
+    "data_types": [
+      "torch.float32",
+      "torch.float16",
+      "torch.int32",
+      "torch.int8"
+    ],
+    "backends": [
+      "UCX"
+    ],
+    "iterations": 10,
+    "warmup_iterations": 3,
+    "src_device": "cuda:0",
+    "dst_device": "cuda:1"
+  },
+  "results": [
+    {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "backend": "UCX",
+      "data_size_bytes": 4096,
+      "data_size_mb": 0.00390625,
+      "iterations": 10,
+      "avg_time_sec": 5.63996029086411e-05,
+      "min_time_sec": 5.075905937701464e-05,
+      "max_time_sec": 6.074202246963978e-05,
+      "std_time_sec": 3.953678788851716e-06,
+      "avg_throughput_mbps": 69.26023940855646,
+      "max_throughput_mbps": 76.95670581651633,
+      "verification_passed": true,
+      "all_times": [
+        5.8169011026620865e-05,
+        6.000592838972807e-05,
+        5.075905937701464e-05,
+        5.149201024323702e-05,
+        6.074202246963978e-05,
+        5.216605495661497e-05,
+        5.3669908083975315e-05,
+        6.011303048580885e-05,
+        5.951302591711283e-05,
+        5.736597813665867e-05
+      ]
+    },
+    {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float16",
+      "backend": "UCX",
+      "data_size_bytes": 2048,
+      "data_size_mb": 0.001953125,
+      "iterations": 10,
+      "avg_time_sec": 5.572503432631493e-05,
+      "min_time_sec": 5.104602314531803e-05,
+      "max_time_sec": 7.25829740986228e-05,
+      "std_time_sec": 6.716740893944234e-06,
+      "avg_throughput_mbps": 35.049327893866895,
+      "max_throughput_mbps": 38.26204040302681,
+      "verification_passed": true,
+      "all_times": [
+        5.1956973038613796e-05,
+        5.3854077123105526e-05,
+        5.260203033685684e-05,
+        5.104602314531803e-05,
+        7.25829740986228e-05,
+        5.665107164531946e-05,
+        5.2906107157468796e-05,
+        5.1261973567306995e-05,
+        6.163609214127064e-05,
+        5.2753021009266376e-05
+      ]
+    },
+    {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.int32",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.int8",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Char'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "backend": "UCX",
+      "data_size_bytes": 1048576,
+      "data_size_mb": 1.0,
+      "iterations": 10,
+      "avg_time_sec": 0.0020273121888749303,
+      "min_time_sec": 0.002005074988119304,
+      "max_time_sec": 0.002069003996439278,
+      "std_time_sec": 2.109990498967941e-05,
+      "avg_throughput_mbps": 493.26394103858087,
+      "max_throughput_mbps": 498.73446425959753,
+      "verification_passed": true,
+      "all_times": [
+        0.0020262720063328743,
+        0.0020420380169525743,
+        0.002030059928074479,
+        0.002069003996439278,
+        0.0020204789470881224,
+        0.002010870957747102,
+        0.002005074988119304,
+        0.0020101889967918396,
+        0.0020080229733139277,
+        0.0020511110778898
+      ]
+    },
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float16",
+      "backend": "UCX",
+      "data_size_bytes": 524288,
+      "data_size_mb": 0.5,
+      "iterations": 10,
+      "avg_time_sec": 0.0010606451891362668,
+      "min_time_sec": 0.0010497430339455605,
+      "max_time_sec": 0.0010941060027107596,
+      "std_time_sec": 1.4343303280230356e-05,
+      "avg_throughput_mbps": 471.41117983778673,
+      "max_throughput_mbps": 476.30704261089664,
+      "verification_passed": true,
+      "all_times": [
+        0.0010532739106565714,
+        0.001050107995979488,
+        0.0010541039519011974,
+        0.0010497430339455605,
+        0.0010725489119067788,
+        0.0010707980254665017,
+        0.0010941060027107596,
+        0.0010528729762881994,
+        0.0010578361107036471,
+        0.0010510609718039632
+      ]
+    },
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.int32",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.int8",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Char'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "backend": "UCX",
+      "data_size_bytes": 16777216,
+      "data_size_mb": 16.0,
+      "iterations": 10,
+      "avg_time_sec": 0.031400743708945814,
+      "min_time_sec": 0.031187376007437706,
+      "max_time_sec": 0.03159607609268278,
+      "std_time_sec": 0.00015043812132400444,
+      "avg_throughput_mbps": 509.5420716243014,
+      "max_throughput_mbps": 513.0280917568778,
+      "verification_passed": true,
+      "all_times": [
+        0.031576204928569496,
+        0.03139923594426364,
+        0.03128195204772055,
+        0.03153824293985963,
+        0.031212172005325556,
+        0.031516527058556676,
+        0.031187376007437706,
+        0.03159607609268278,
+        0.03138181904796511,
+        0.03131783101707697
+      ]
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.float16",
+      "backend": "UCX",
+      "data_size_bytes": 8388608,
+      "data_size_mb": 8.0,
+      "iterations": 10,
+      "avg_time_sec": 0.01607338999165222,
+      "min_time_sec": 0.01577892294153571,
+      "max_time_sec": 0.016486891079694033,
+      "std_time_sec": 0.00020285511921620938,
+      "avg_throughput_mbps": 497.71703443734225,
+      "max_throughput_mbps": 507.0054546588328,
+      "verification_passed": true,
+      "all_times": [
+        0.016047019977122545,
+        0.016022157040424645,
+        0.015964085003361106,
+        0.01577892294153571,
+        0.016311232931911945,
+        0.016486891079694033,
+        0.01610586093738675,
+        0.0159294530749321,
+        0.015951032983139157,
+        0.016137243947014213
+      ]
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.int32",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.int8",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Char'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "backend": "UCX",
+      "data_size_bytes": 67108864,
+      "data_size_mb": 64.0,
+      "iterations": 10,
+      "avg_time_sec": 0.12596174689242617,
+      "min_time_sec": 0.12403014802839607,
+      "max_time_sec": 0.1279743849299848,
+      "std_time_sec": 0.0014616957924142471,
+      "avg_throughput_mbps": 508.09076230625215,
+      "max_throughput_mbps": 516.0035766896572,
+      "verification_passed": true,
+      "all_times": [
+        0.1272186959395185,
+        0.12784628907684237,
+        0.1279743849299848,
+        0.12709477602038532,
+        0.12459127395413816,
+        0.12506133993156254,
+        0.12403014802839607,
+        0.12480950797908008,
+        0.12495667405892164,
+        0.12603437900543213
+      ]
+    },
+    {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.float16",
+      "backend": "UCX",
+      "data_size_bytes": 33554432,
+      "data_size_mb": 32.0,
+      "iterations": 10,
+      "avg_time_sec": 0.06302362423157319,
+      "min_time_sec": 0.06234319705981761,
+      "max_time_sec": 0.0636803659144789,
+      "std_time_sec": 0.00048483347441770764,
+      "avg_throughput_mbps": 507.74610933861265,
+      "max_throughput_mbps": 513.2877604800465,
+      "verification_passed": true,
+      "all_times": [
+        0.06360874103847891,
+        0.06321131892036647,
+        0.06319133809302002,
+        0.06353055802173913,
+        0.06262925104238093,
+        0.06285053107421845,
+        0.0636803659144789,
+        0.06265229207929224,
+        0.06253864907193929,
+        0.06234319705981761
+      ]
+    },
+    {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.int32",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.int8",
+      "backend": "UCX",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Char'",
+      "verification_passed": false
+    }
+  ],
+  "timestamp": "2025-08-12 07:40:42"
+}

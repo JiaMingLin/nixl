@@ -1,0 +1,179 @@
+{
+  "framework": "PyTorch",
+  "config": {
+    "tensor_shapes": [
+      [
+        512,
+        512
+      ],
+      [
+        2048,
+        2048
+      ]
+    ],
+    "data_types": [
+      "torch.float32",
+      "torch.int32"
+    ],
+    "transfer_methods": [
+      "copy_",
+      "direct_to"
+    ],
+    "iterations": 5,
+    "warmup_iterations": 2,
+    "src_device": "cuda:0",
+    "dst_device": "cuda:1"
+  },
+  "system_info": {
+    "pytorch_version": "2.7.1+cu126",
+    "cuda_version": "12.6",
+    "gpu_count": 2,
+    "gpu_names": [
+      "NVIDIA GeForce RTX 3060",
+      "NVIDIA GeForce RTX 3060"
+    ]
+  },
+  "results": [
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "method": "copy_",
+      "data_size_bytes": 1048576,
+      "data_size_mb": 1.0,
+      "iterations": 5,
+      "avg_time_sec": 0.0008668019669130445,
+      "min_time_sec": 0.0008638768922537565,
+      "max_time_sec": 0.0008704139618203044,
+      "std_time_sec": 2.435407524558295e-06,
+      "avg_throughput_mbps": 1153.666048499308,
+      "max_throughput_mbps": 1157.5723450492046,
+      "verification_passed": true,
+      "all_times": [
+        0.0008676099823787808,
+        0.0008664740016683936,
+        0.0008638768922537565,
+        0.0008656349964439869,
+        0.0008704139618203044
+      ]
+    },
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.int32",
+      "method": "copy_",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "method": "copy_",
+      "data_size_bytes": 16777216,
+      "data_size_mb": 16.0,
+      "iterations": 5,
+      "avg_time_sec": 0.01376325699966401,
+      "min_time_sec": 0.01373422599863261,
+      "max_time_sec": 0.013783129979856312,
+      "std_time_sec": 1.9244948143048087e-05,
+      "avg_throughput_mbps": 1162.515529601067,
+      "max_throughput_mbps": 1164.9728205719764,
+      "verification_passed": true,
+      "all_times": [
+        0.01373422599863261,
+        0.013778300024569035,
+        0.013760061003267765,
+        0.013783129979856312,
+        0.013760567991994321
+      ]
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.int32",
+      "method": "copy_",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.float32",
+      "method": "direct_to",
+      "data_size_bytes": 1048576,
+      "data_size_mb": 1.0,
+      "iterations": 5,
+      "avg_time_sec": 0.000906817615032196,
+      "min_time_sec": 0.0008693831041455269,
+      "max_time_sec": 0.001041890005581081,
+      "std_time_sec": 7.556696221891016e-05,
+      "avg_throughput_mbps": 1102.7575814840072,
+      "max_throughput_mbps": 1150.2408952182823,
+      "verification_passed": true,
+      "all_times": [
+        0.001041890005581081,
+        0.0008708219975233078,
+        0.0008759730262681842,
+        0.0008693831041455269,
+        0.0008760199416428804
+      ]
+    },
+    {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "torch.int32",
+      "method": "direct_to",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "method": "direct_to",
+      "data_size_bytes": 16777216,
+      "data_size_mb": 16.0,
+      "iterations": 5,
+      "avg_time_sec": 0.013856631238013506,
+      "min_time_sec": 0.013840156025253236,
+      "max_time_sec": 0.01387113204691559,
+      "std_time_sec": 1.2098442866579672e-05,
+      "avg_throughput_mbps": 1154.6818072278993,
+      "max_throughput_mbps": 1156.0563313596924,
+      "verification_passed": true,
+      "all_times": [
+        0.013840156025253236,
+        0.013853184063918889,
+        0.013853128999471664,
+        0.01387113204691559,
+        0.01386555505450815
+      ]
+    },
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.int32",
+      "method": "direct_to",
+      "error": "\"normal_kernel_cuda\" not implemented for 'Int'",
+      "verification_passed": false
+    }
+  ],
+  "timestamp": "2025-08-12 07:56:57"
+}
